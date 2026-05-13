@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | African Mother Tongues</title>
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #c67240;
+            --primary-dark: #a85d32;
+            --secondary: #2c3e50;
+            --accent: #f5e6d3;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fffaf5;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero-pattern {
+            background-image: radial-gradient(var(--primary) 0.5px, transparent 0.5px), radial-gradient(var(--primary) 0.5px, #fffaf5 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            opacity: 0.05;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #c67240 0%, #d89168 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #c67240 0%, #e88b58 100%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .blob {
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(198, 114, 64, 0.2) 0%, rgba(216, 145, 104, 0.1) 100%);
+            filter: blur(80px);
+            border-radius: 50%;
+            z-index: -1;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .form-input {
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(198, 114, 64, 0.1);
+        }
+
+        .contact-card {
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        @keyframes pulse-ring {
+            0% {
+                transform: scale(0.8);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+        }
+
+        .pulse-ring::before {
+            content: '';
+            position: absolute;
+            inset: -8px;
+            border: 2px solid var(--primary);
+            border-radius: 50%;
+            animation: pulse-ring 2s ease-out infinite;
+        }
+
+        .map-container {
+            position: relative;
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        .map-container::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 70%, #fffaf5 100%);
+            pointer-events: none;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                   <div class="w-14 h-14 flex items-center justify-center">
+    <img 
+        src="assets/African Mother Tongues logo (1).png" 
+        alt="African Tongues Logo"
+        class="w-22 h-22 object-contain filter contrast-125 brightness-110 drop-shadow-sm"
+    />
+</div>
+                    <span class="text-xl font-extrabold text-[#2c3e50] tracking-tight">Mother <span class="text-[#c67240]">Tongue</span></span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html#home" class="nav-link text-gray-700 font-medium">Home</a>
+                    <a href="index.html#features" class="nav-link text-gray-700 font-medium">Features</a>
+                    <a href="index.html#how-it-works" class="nav-link text-gray-700 font-medium">How it Works</a>
+                    <a href="index.html#faq" class="nav-link text-gray-700 font-medium">FAQ</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="index.html#download" class="hidden sm:inline-flex bg-[#c67240] hover:bg-[#a85d32] text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                        Download
+                    </a>
+                    <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4 shadow-xl">
+            <a href="index.html#home" class="block text-gray-700 font-medium px-4">Home</a>
+            <a href="index.html#features" class="block text-gray-700 font-medium px-4">Features</a>
+            <a href="index.html#how-it-works" class="block text-gray-700 font-medium px-4">How it Works</a>
+            <a href="index.html#faq" class="block text-gray-700 font-medium px-4">FAQ</a>
+            <a href="index.html#download" class="block bg-[#c67240] text-white text-center py-3 rounded-xl mx-4">Download Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 overflow-hidden">
+        <div class="hero-pattern absolute inset-0"></div>
+        <div class="blob -top-24 -right-24"></div>
+        <div class="blob bottom-0 -left-48"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+            <div class="text-center reveal">
+                <div class="inline-flex items-center gap-2 bg-orange-100 text-[#c67240] px-4 py-2 rounded-full text-sm font-bold mb-6">
+                    <i class="fas fa-headset"></i>
+                    We're Here to Help
+                </div>
+                <h1 class="text-4xl lg:text-6xl font-extrabold text-[#2c3e50] leading-tight mb-6">
+                    Get in <span class="gradient-text">Touch</span>
+                </h1>
+                <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+                    Have questions, feedback, or need support? We'd love to hear from you. Our team is ready to assist you in any language!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Cards Section -->
+    <section class="py-12 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Email Card -->
+                <div class="contact-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border border-orange-100 shadow-sm hover:shadow-xl reveal">
+                    <div class="w-14 h-14 bg-[#c67240] rounded-2xl flex items-center justify-center text-white mb-5 relative pulse-ring">
+                        <i class="fas fa-envelope text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#2c3e50] mb-2">Email Us</h3>
+                    <p class="text-gray-500 text-sm mb-4">For general inquiries and support</p>
+                    <a href="mailto:hello@africantongues.com" class="text-[#c67240] font-semibold hover:underline break-all">
+                        hello@africantongues.com
+                    </a>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="contact-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border border-orange-100 shadow-sm hover:shadow-xl reveal">
+                    <div class="w-14 h-14 bg-[#c67240] rounded-2xl flex items-center justify-center text-white mb-5">
+                        <i class="fas fa-phone-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#2c3e50] mb-2">Call Us</h3>
+                    <p class="text-gray-500 text-sm mb-4">Mon-Fri, 9am-6pm (WAT)</p>
+                    <a href="tel:+2341234567890" class="text-[#c67240] font-semibold hover:underline">
+                        +234 123 456 7890
+                    </a>
+                </div>
+
+                <!-- Live Chat Card -->
+                <div class="contact-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border border-orange-100 shadow-sm hover:shadow-xl reveal">
+                    <div class="w-14 h-14 bg-[#c67240] rounded-2xl flex items-center justify-center text-white mb-5">
+                        <i class="fas fa-comments text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#2c3e50] mb-2">Live Chat</h3>
+                    <p class="text-gray-500 text-sm mb-4">Get instant help from our team</p>
+                    <button onclick="openChat()" class="text-[#c67240] font-semibold hover:underline flex items-center gap-2">
+                        Start Chat <i class="fas fa-arrow-right text-sm"></i>
+                    </button>
+                </div>
+
+                <!-- Office Card -->
+                <div class="contact-card bg-gradient-to-br from-orange-50 to-white p-6 rounded-3xl border border-orange-100 shadow-sm hover:shadow-xl reveal">
+                    <div class="w-14 h-14 bg-[#c67240] rounded-2xl flex items-center justify-center text-white mb-5">
+                        <i class="fas fa-map-marker-alt text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-[#2c3e50] mb-2">Visit Us</h3>
+                    <p class="text-gray-500 text-sm mb-4">Our headquarters location</p>
+                    <address class="text-[#c67240] font-semibold not-italic text-sm">
+                        Lagos, Nigeria
+                    </address>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Contact Form Section -->
+    <section class="py-20 bg-[#fffaf5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-16">
+                
+                <!-- Contact Form -->
+                <div class="lg:w-3/5 reveal">
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100">
+                        <h2 class="text-3xl font-bold text-[#2c3e50] mb-2">Send us a Message</h2>
+                        <p class="text-gray-500 mb-8">Fill out the form below and we'll get back to you within 24 hours.</p>
+                        
+                        <form id="contactForm" class="space-y-6">
+                            <!-- Name Fields -->
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div>
+                                    <label for="firstName" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                        First Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="firstName" 
+                                        name="firstName" 
+                                        required
+                                        class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700"
+                                        placeholder="John"
+                                    >
+                                </div>
+                                <div>
+                                    <label for="lastName" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                        Last Name <span class="text-red-500">*</span>
+                                    </label>
+                                    <input 
+                                        type="text" 
+                                        id="lastName" 
+                                        name="lastName" 
+                                        required
+                                        class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700"
+                                        placeholder="Doe"
+                                    >
+                                </div>
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Email Address <span class="text-red-500">*</span>
+                                </label>
+                                <input 
+                                    type="email" 
+                                    id="email" 
+                                    name="email" 
+                                    required
+                                    class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700"
+                                    placeholder="john@example.com"
+                                >
+                            </div>
+
+                            <!-- Phone (Optional) -->
+                            <div>
+                                <label for="phone" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Phone Number <span class="text-gray-400 font-normal">(Optional)</span>
+                                </label>
+                                <input 
+                                    type="tel" 
+                                    id="phone" 
+                                    name="phone"
+                                    class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700"
+                                    placeholder="+234 123 456 7890"
+                                >
+                            </div>
+
+                            <!-- Subject Dropdown -->
+                            <div>
+                                <label for="subject" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Subject <span class="text-red-500">*</span>
+                                </label>
+                                <div class="relative">
+                                    <select 
+                                        id="subject" 
+                                        name="subject" 
+                                        required
+                                        class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700 appearance-none bg-white cursor-pointer"
+                                    >
+                                        <option value="" disabled selected>Select a topic</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="support">Technical Support</option>
+                                        <option value="billing">Billing & Payments</option>
+                                        <option value="partnership">Partnership Opportunities</option>
+                                        <option value="feedback">Feedback & Suggestions</option>
+                                        <option value="language">Language Request</option>
+                                        <option value="press">Press & Media</option>
+                                        <option value="careers">Careers</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Preferred Language -->
+                            <div>
+                                <label for="language" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Preferred Response Language
+                                </label>
+                                <div class="relative">
+                                    <select 
+                                        id="language" 
+                                        name="language"
+                                        class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700 appearance-none bg-white cursor-pointer"
+                                    >
+                                        <option value="english" selected>English</option>
+                                        <option value="french">French</option>
+                                        <option value="swahili">Swahili</option>
+                                        <option value="yoruba">Yoruba</option>
+                                        <option value="zulu">Zulu</option>
+                                        <option value="amharic">Amharic</option>
+                                        <option value="arabic">Arabic</option>
+                                        <option value="portuguese">Portuguese</option>
+                                    </select>
+                                    <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none">
+                                        <i class="fas fa-chevron-down text-gray-400"></i>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Message -->
+                            <div>
+                                <label for="message" class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Your Message <span class="text-red-500">*</span>
+                                </label>
+                                <textarea 
+                                    id="message" 
+                                    name="message" 
+                                    rows="5" 
+                                    required
+                                    class="form-input w-full px-5 py-4 rounded-xl border border-gray-200 focus:outline-none text-gray-700 resize-none"
+                                    placeholder="Tell us how we can help you..."
+                                ></textarea>
+                                <p class="text-xs text-gray-400 mt-2">Minimum 20 characters</p>
+                            </div>
+
+                            <!-- File Attachment -->
+                            <div>
+                                <label class="block text-sm font-semibold text-[#2c3e50] mb-2">
+                                    Attachment <span class="text-gray-400 font-normal">(Optional)</span>
+                                </label>
+                                <div class="border-2 border-dashed border-gray-200 rounded-xl p-6 text-center hover:border-[#c67240] transition-colors cursor-pointer" id="dropZone">
+                                    <input type="file" id="fileInput" name="attachment" class="hidden" accept=".pdf,.doc,.docx,.png,.jpg,.jpeg">
+                                    <div class="space-y-2">
+                                        <i class="fas fa-cloud-upload-alt text-3xl text-gray-300"></i>
+                                        <p class="text-gray-500 text-sm">
+                                            <span class="text-[#c67240] font-semibold">Click to upload</span> or drag and drop
+                                        </p>
+                                        <p class="text-xs text-gray-400">PDF, DOC, PNG, JPG (max 5MB)</p>
+                                    </div>
+                                    <div id="fileInfo" class="hidden mt-3 text-sm text-[#c67240]"></div>
+                                </div>
+                            </div>
+
+                            <!-- Consent Checkbox -->
+                            <div class="flex items-start gap-3">
+                                <input 
+                                    type="checkbox" 
+                                    id="consent" 
+                                    name="consent" 
+                                    required
+                                    class="mt-1 w-5 h-5 text-[#c67240] border-gray-300 rounded focus:ring-[#c67240]"
+                                >
+                                <label for="consent" class="text-sm text-gray-600">
+                                    I agree to the <a href="privacy-policy.html" class="text-[#c67240] hover:underline">Privacy Policy</a> and consent to having my data processed for the purpose of this inquiry. <span class="text-red-500">*</span>
+                                </label>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button 
+                                type="submit"
+                                class="w-full bg-[#c67240] hover:bg-[#a85d32] text-white px-8 py-4 rounded-xl font-bold text-lg transition-all shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 flex items-center justify-center gap-3"
+                            >
+                                <span>Send Message</span>
+                                <i class="fas fa-paper-plane"></i>
+                            </button>
+                        </form>
+
+                        <!-- Success Message (Hidden by default) -->
+                        <div id="successMessage" class="hidden text-center py-12">
+                            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                                <i class="fas fa-check text-4xl text-green-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-[#2c3e50] mb-2">Message Sent!</h3>
+                            <p class="text-gray-500 mb-6">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                            <button onclick="resetForm()" class="text-[#c67240] font-semibold hover:underline">
+                                Send another message
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="lg:w-2/5 space-y-8">
+                    <!-- Quick Help -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 reveal">
+                        <h3 class="text-xl font-bold text-[#2c3e50] mb-6 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-bolt text-[#c67240]"></i>
+                            </div>
+                            Quick Help
+                        </h3>
+                        <div class="space-y-4">
+                            <a href="index.html#faq" class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors group">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm group-hover:shadow">
+                                    <i class="fas fa-question-circle text-[#c67240]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#2c3e50]">FAQs</h4>
+                                    <p class="text-sm text-gray-500">Find quick answers</p>
+                                </div>
+                                <i class="fas fa-chevron-right text-gray-300 ml-auto"></i>
+                            </a>
+                            <a href="help-center.html" class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors group">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm group-hover:shadow">
+                                    <i class="fas fa-book text-[#c67240]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#2c3e50]">Help Center</h4>
+                                    <p class="text-sm text-gray-500">Browse our guides</p>
+                                </div>
+                                <i class="fas fa-chevron-right text-gray-300 ml-auto"></i>
+                            </a>
+                            <a href="community.html" class="flex items-center gap-4 p-4 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors group">
+                                <div class="w-10 h-10 bg-white rounded-lg flex items-center justify-center shadow-sm group-hover:shadow">
+                                    <i class="fas fa-users text-[#c67240]"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#2c3e50]">Community Forum</h4>
+                                    <p class="text-sm text-gray-500">Join discussions</p>
+                                </div>
+                                <i class="fas fa-chevron-right text-gray-300 ml-auto"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Response Time -->
+                    <div class="bg-gradient-to-br from-[#c67240] to-[#e88b58] rounded-3xl p-8 text-white reveal">
+                        <div class="flex items-center gap-4 mb-6">
+                            <div class="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center">
+                                <i class="fas fa-clock text-2xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-bold">Response Time</h3>
+                                <p class="opacity-80 text-sm">We're quick to respond</p>
+                            </div>
+                        </div>
+                        <div class="space-y-4">
+                            <div class="flex justify-between items-center">
+                                <span class="opacity-80">Email</span>
+                                <span class="font-bold">Within 24 hours</span>
+                            </div>
+                            <div class="h-px bg-white/20"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="opacity-80">Live Chat</span>
+                                <span class="font-bold">Under 5 minutes</span>
+                            </div>
+                            <div class="h-px bg-white/20"></div>
+                            <div class="flex justify-between items-center">
+                                <span class="opacity-80">Phone</span>
+                                <span class="font-bold">Immediate</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Media -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 reveal">
+                        <h3 class="text-xl font-bold text-[#2c3e50] mb-6">Connect With Us</h3>
+                        <p class="text-gray-500 text-sm mb-6">Follow us on social media for updates, tips, and community stories.</p>
+                        <div class="flex gap-4">
+                            <a href="#" class="social-icon w-12 h-12 bg-blue-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 bg-blue-700 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fab fa-linkedin-in text-xl"></i>
+                            </a>
+                            <a href="#" class="social-icon w-12 h-12 bg-red-600 rounded-xl flex items-center justify-center text-white shadow-lg">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Office Hours -->
+                    <div class="bg-white rounded-3xl p-8 shadow-lg border border-gray-100 reveal">
+                        <h3 class="text-xl font-bold text-[#2c3e50] mb-6 flex items-center gap-3">
+                            <div class="w-10 h-10 bg-orange-100 rounded-xl flex items-center justify-center">
+                                <i class="fas fa-calendar-alt text-[#c67240]"></i>
+                            </div>
+                            Office Hours
+                        </h3>
+                        <div class="space-y-4 text-sm">
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Monday - Friday</span>
+                                <span class="font-semibold text-[#2c3e50]">9:00 AM - 6:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Saturday</span>
+                                <span class="font-semibold text-[#2c3e50]">10:00 AM - 4:00 PM</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-gray-500">Sunday</span>
+                                <span class="font-semibold text-gray-400">Closed</span>
+                            </div>
+                            <div class="pt-4 border-t border-gray-100">
+                                <p class="text-gray-400 text-xs">
+                                    <i class="fas fa-globe-africa mr-2"></i>
+                                    All times in West Africa Time (WAT)
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Office Locations Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-[#2c3e50] mb-4">Our Global Offices</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto">Strategically located across Africa and beyond to serve you better.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Lagos Office -->
+                <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 border border-orange-100 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-[#c67240] rounded-xl flex items-center justify-center text-white">
+                            <span class="text-lg font-bold">NG</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#2c3e50]">Lagos, Nigeria</h3>
+                            <p class="text-sm text-[#c67240]">Headquarters</p>
+                        </div>
+                    </div>
+                    <address class="not-italic text-gray-600 text-sm space-y-2 mb-6">
+                        <p><i class="fas fa-map-marker-alt text-[#c67240] w-5"></i> 42 Tech Hub Avenue</p>
+                        <p class="pl-5">Victoria Island, Lagos</p>
+                        <p><i class="fas fa-phone text-[#c67240] w-5"></i> +234 123 456 7890</p>
+                        <p><i class="fas fa-envelope text-[#c67240] w-5"></i> lagos@africantongues.com</p>
+                    </address>
+                    <a href="#" class="inline-flex items-center gap-2 text-[#c67240] font-semibold text-sm hover:underline">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+
+                <!-- Nairobi Office -->
+                <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 border border-orange-100 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-[#2c3e50] rounded-xl flex items-center justify-center text-white">
+                            <span class="text-lg font-bold">KE</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#2c3e50]">Nairobi, Kenya</h3>
+                            <p class="text-sm text-gray-500">East Africa Hub</p>
+                        </div>
+                    </div>
+                    <address class="not-italic text-gray-600 text-sm space-y-2 mb-6">
+                        <p><i class="fas fa-map-marker-alt text-[#c67240] w-5"></i> 15 Innovation Tower</p>
+                        <p class="pl-5">Westlands, Nairobi</p>
+                        <p><i class="fas fa-phone text-[#c67240] w-5"></i> +254 700 123 456</p>
+                        <p><i class="fas fa-envelope text-[#c67240] w-5"></i> nairobi@africantongues.com</p>
+                    </address>
+                    <a href="#" class="inline-flex items-center gap-2 text-[#c67240] font-semibold text-sm hover:underline">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+
+                <!-- Cape Town Office -->
+                <div class="bg-gradient-to-br from-orange-50 to-white rounded-3xl p-8 border border-orange-100 reveal">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-12 h-12 bg-[#2c3e50] rounded-xl flex items-center justify-center text-white">
+                            <span class="text-lg font-bold">ZA</span>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#2c3e50]">Cape Town, South Africa</h3>
+                            <p class="text-sm text-gray-500">Southern Africa Hub</p>
+                        </div>
+                    </div>
+                    <address class="not-italic text-gray-600 text-sm space-y-2 mb-6">
+                        <p><i class="fas fa-map-marker-alt text-[#c67240] w-5"></i> 88 Sea Point Boulevard</p>
+                        <p class="pl-5">Cape Town, Western Cape</p>
+                        <p><i class="fas fa-phone text-[#c67240] w-5"></i> +27 21 123 4567</p>
+                        <p><i class="fas fa-envelope text-[#c67240] w-5"></i> capetown@africantongues.com</p>
+                    </address>
+                    <a href="#" class="inline-flex items-center gap-2 text-[#c67240] font-semibold text-sm hover:underline">
+                        <i class="fas fa-directions"></i> Get Directions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section -->
+    <section class="py-12 bg-[#fffaf5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="map-container shadow-2xl reveal">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253682.45932886128!2d3.1438721!3d6.5480357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8b2ae68280c1%3A0xdc9e87a367c3d9cb!2sLagos%2C%20Nigeria!5e0!3m2!1sen!2sus!4v1699999999999!5m2!1sen!2sus"
+                    width="100%" 
+                    height="450" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    class="rounded-3xl"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-[#2c3e50]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center reveal">
+            <div class="inline-flex items-center gap-2 bg-white/10 text-white px-4 py-2 rounded-full text-sm font-bold mb-6">
+                <i class="fas fa-download"></i>
+                Available Now
+            </div>
+            <h2 class="text-3xl lg:text-5xl font-bold text-white mb-6">
+                Ready to Bridge the Language Gap?
+            </h2>
+            <p class="text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
+                Download African Mother Tongues today and start connecting with millions across Africa in their native languages.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" class="bg-white text-[#2c3e50] px-8 py-4 rounded-2xl flex items-center gap-3 hover:bg-gray-100 transition-all font-bold shadow-lg">
+                    <i class="fab fa-apple text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-xs opacity-70">Download on the</p>
+                        <p class="text-lg leading-none">App Store</p>
+                    </div>
+                </a>
+                <a href="#" class="bg-[#c67240] text-white px-8 py-4 rounded-2xl flex items-center gap-3 hover:bg-[#a85d32] transition-all font-bold shadow-lg">
+                    <i class="fab fa-google-play text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-xs opacity-70">Get it on</p>
+                        <p class="text-lg leading-none">Google Play</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                       <div class="w-14 h-14 flex items-center justify-center">
+    <img 
+        src="assets/African Mother Tongues logo (1).png" 
+        alt="African Tongues Logo"
+        class="w-22 h-22 object-contain filter contrast-125 brightness-110 drop-shadow-sm"
+    />
+</div>
+                        <span class="text-2xl font-extrabold tracking-tight">Mother <span class="text-[#c67240]">Tongue</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm mb-8">
+                        The definitive bridge between cultures. Bridging the gap through technology while preserving the richness of African heritage.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>   
+                </div>
+                
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="privacy-policy.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Support</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors text-[#c67240]">Contact Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Community Forum</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 African Mother Tongues. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Live Chat Widget (Floating Button) -->
+    <div id="chatWidget" class="fixed bottom-6 right-6 z-50">
+        <button onclick="openChat()" class="w-16 h-16 bg-[#c67240] hover:bg-[#a85d32] rounded-full shadow-2xl flex items-center justify-center text-white transition-all hover:scale-110 group">
+            <i class="fas fa-comments text-2xl group-hover:hidden"></i>
+            <i class="fas fa-times text-2xl hidden group-hover:block"></i>
+        </button>
+        <span class="absolute -top-2 -right-2 w-5 h-5 bg-green-500 rounded-full border-2 border-white animate-pulse"></span>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll Reveal
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        const contactForm = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simulate form submission
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            submitBtn.disabled = true;
+
+            setTimeout(() => {
+                contactForm.classList.add('hidden');
+                successMessage.classList.remove('hidden');
+            }, 2000);
+        });
+
+        function resetForm() {
+            contactForm.reset();
+            contactForm.classList.remove('hidden');
+            successMessage.classList.add('hidden');
+            const submitBtn = contactForm.querySelector('button[type="submit"]');
+            submitBtn.innerHTML = '<span>Send Message</span><i class="fas fa-paper-plane"></i>';
+            submitBtn.disabled = false;
+        }
+
+        // File Upload
+        const dropZone = document.getElementById('dropZone');
+        const fileInput = document.getElementById('fileInput');
+        const fileInfo = document.getElementById('fileInfo');
+
+        dropZone.addEventListener('click', () => fileInput.click());
+
+        dropZone.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            dropZone.classList.add('border-[#c67240]', 'bg-orange-50');
+        });
+
+        dropZone.addEventListener('dragleave', () => {
+            dropZone.classList.remove('border-[#c67240]', 'bg-orange-50');
+        });
+
+        dropZone.addEventListener('drop', (e) => {
+            e.preventDefault();
+            dropZone.classList.remove('border-[#c67240]', 'bg-orange-50');
+            const files = e.dataTransfer.files;
+            if (files.length) {
+                handleFile(files[0]);
+            }
+        });
+
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length) {
+                handleFile(e.target.files[0]);
+            }
+        });
+
+        function handleFile(file) {
+            if (file.size > 5 * 1024 * 1024) {
+                alert('File size must be less than 5MB');
+                return;
+            }
+            fileInfo.textContent = `📎 ${file.name} (${(file.size / 1024).toFixed(1)} KB)`;
+            fileInfo.classList.remove('hidden');
+        }
+
+        // Live Chat Placeholder
+        function openChat() {
+            alert('Live chat would open here! This is a placeholder for a real chat integration like Intercom, Crisp, or Zendesk.');
+        }
+
+        // Form validation enhancement
+        const inputs = document.querySelectorAll('.form-input');
+        inputs.forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() !== '') {
+                    this.classList.add('border-green-300');
+                    this.classList.remove('border-red-300');
+                }
+            });
+
+            input.addEventListener('invalid', function() {
+                this.classList.add('border-red-300');
+                this.classList.remove('border-green-300');
+            });
+        });
+    </script>
+</body>
+</html>

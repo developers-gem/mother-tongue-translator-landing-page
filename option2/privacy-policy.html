@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Mother Tongue</title>
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap');
+
+        :root {
+            --primary: #c67240;
+            --primary-dark: #a85d32;
+            --secondary: #2c3e50;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #fffaf5;
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, #c67240 0%, #d89168 100%);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #c67240 0%, #e88b58 100%);
+        }
+
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .policy-section h3 {
+            color: #2c3e50;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section p, .policy-section li {
+            color: #4b5563;
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        .policy-section ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .policy-section li {
+            margin-bottom: 0.5rem;
+        }
+
+        .toc-link {
+            transition: all 0.3s ease;
+        }
+        .toc-link:hover {
+            color: #c67240;
+            padding-left: 8px;
+        }
+    </style>
+</head>
+<body class="overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full z-50 glass">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center">
+                <a href="index.html" class="flex items-center gap-3">
+                     <div class="w-14 h-14 flex items-center justify-center">
+    <img 
+        src="assets/African Mother Tongues logo (1).png" 
+        alt="Mother Tongue Logo"
+        class="w-22 h-22 object-contain filter contrast-125 brightness-110 drop-shadow-sm"
+    />
+</div>
+                    <span class="text-xl font-extrabold text-[#2c3e50] tracking-tight">Mother <span class="text-[#c67240]">Tongue</span></span>
+                </a>
+                
+                <div class="hidden md:flex space-x-8">
+                    <a href="index.html" class="nav-link text-gray-700 font-medium">Home</a>
+                    <a href="about.html" class="nav-link text-gray-700 font-medium">About Us</a>
+                    <a href="index.html#features" class="nav-link text-gray-700 font-medium">Features</a>
+                    <a href="index.html#faq" class="nav-link text-gray-700 font-medium">FAQ</a>
+                </div>
+
+                <div class="flex items-center gap-4">
+                    <a href="index.html#download" class="hidden sm:inline-flex bg-[#c67240] hover:bg-[#a85d32] text-white px-6 py-2.5 rounded-full font-semibold transition-all shadow-md hover:shadow-xl transform hover:-translate-y-0.5">
+                        Download
+                    </a>
+                    <button class="md:hidden text-gray-700" id="mobile-menu-btn">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t p-4 space-y-4 shadow-xl">
+            <a href="index.html" class="block text-gray-700 font-medium px-4">Home</a>
+            <a href="about.html" class="block text-gray-700 font-medium px-4">About Us</a>
+            <a href="index.html#features" class="block text-gray-700 font-medium px-4">Features</a>
+            <a href="index.html#faq" class="block text-gray-700 font-medium px-4">FAQ</a>
+            <a href="index.html#download" class="block bg-[#c67240] text-white text-center py-3 rounded-xl mx-4">Download Now</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative pt-32 pb-16 lg:pt-40 lg:pb-20 bg-gradient-to-b from-orange-50 to-[#fffaf5]">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <div class="inline-flex items-center gap-2 bg-orange-100 text-[#c67240] px-4 py-2 rounded-full text-sm font-bold mb-6">
+                <i class="fas fa-shield-alt"></i>
+                Your Privacy Matters
+            </div>
+            <h1 class="text-4xl lg:text-5xl font-extrabold text-[#2c3e50] leading-tight mb-6 reveal">
+                Privacy Policy
+            </h1>
+            <p class="text-gray-600 text-lg reveal">
+                Last updated: January 15, 2025
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="py-16 bg-[#fffaf5]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col lg:flex-row gap-12">
+                <!-- Table of Contents - Sidebar -->
+                <aside class="lg:w-1/4">
+                    <div class="sticky top-28 bg-white rounded-2xl p-6 shadow-lg reveal">
+                        <h4 class="font-bold text-[#2c3e50] mb-4 text-lg">Table of Contents</h4>
+                        <nav class="space-y-3 text-sm">
+                            <a href="#introduction" class="block text-gray-600 toc-link">1. Introduction</a>
+                            <a href="#info-collect" class="block text-gray-600 toc-link">2. Information We Collect</a>
+                            <a href="#how-use" class="block text-gray-600 toc-link">3. How We Use Your Information</a>
+                            <a href="#data-sharing" class="block text-gray-600 toc-link">4. Data Sharing & Disclosure</a>
+                            <a href="#data-security" class="block text-gray-600 toc-link">5. Data Security</a>
+                            <a href="#data-retention" class="block text-gray-600 toc-link">6. Data Retention</a>
+                            <a href="#your-rights" class="block text-gray-600 toc-link">7. Your Rights</a>
+                            <a href="#children" class="block text-gray-600 toc-link">8. Children's Privacy</a>
+                            <a href="#international" class="block text-gray-600 toc-link">9. International Transfers</a>
+                            <a href="#changes" class="block text-gray-600 toc-link">10. Changes to Policy</a>
+                            <a href="#contact" class="block text-gray-600 toc-link">11. Contact Us</a>
+                        </nav>
+                    </div>
+                </aside>
+
+                <!-- Policy Content -->
+                <main class="lg:w-3/4">
+                    <div class="bg-white rounded-3xl p-8 lg:p-12 shadow-lg reveal policy-section">
+                        
+                        <section id="introduction">
+                            <h3>1. Introduction</h3>
+                            <p>
+                                Welcome to Mother Tongue ("we," "our," or "us"). We are committed to protecting your privacy and ensuring you have a positive experience when using our mobile application and services (collectively, the "Services").
+                            </p>
+                            <p>
+                                This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our translation application. Please read this policy carefully to understand our views and practices regarding your personal data.
+                            </p>
+                            <p>
+                                By using our Services, you agree to the collection and use of information in accordance with this policy. If you do not agree with the terms of this policy, please do not access or use our Services.
+                            </p>
+                        </section>
+
+                        <section id="info-collect">
+                            <h3>2. Information We Collect</h3>
+                            <p>We collect several types of information to provide and improve our Services:</p>
+                            
+                            <p><strong>2.1 Information You Provide Directly:</strong></p>
+                            <ul>
+                                <li><strong>Account Information:</strong> When you create an account, we collect your name, email address, and password.</li>
+                                <li><strong>Profile Data:</strong> Optional information such as profile picture, preferred languages, and location preferences.</li>
+                                <li><strong>Translation Content:</strong> Text, voice recordings, and images you submit for translation (only processed, not permanently stored unless saved to Favorites).</li>
+                                <li><strong>Feedback & Support:</strong> Information you provide when contacting our support team or submitting feedback.</li>
+                            </ul>
+
+                            <p><strong>2.2 Information Collected Automatically:</strong></p>
+                            <ul>
+                                <li><strong>Device Information:</strong> Device type, operating system, unique device identifiers, and mobile network information.</li>
+                                <li><strong>Usage Data:</strong> Features used, time spent on the app, language pairs selected, and translation frequency.</li>
+                                <li><strong>Log Data:</strong> IP address, browser type, pages visited, and crash reports.</li>
+                                <li><strong>Location Data:</strong> Approximate location based on IP address (precise location only with your explicit consent).</li>
+                            </ul>
+
+                            <p><strong>2.3 Information from Third Parties:</strong></p>
+                            <ul>
+                                <li>Social login data (if you choose to sign in via Google, Apple, or Facebook).</li>
+                                <li>Analytics data from trusted partners.</li>
+                            </ul>
+                        </section>
+
+                        <section id="how-use">
+                            <h3>3. How We Use Your Information</h3>
+                            <p>We use the collected information for various purposes:</p>
+                            <ul>
+                                <li><strong>Provide Services:</strong> To deliver accurate translations and app functionality.</li>
+                                <li><strong>Improve AI Models:</strong> Anonymized and aggregated data helps improve our translation algorithms.</li>
+                                <li><strong>Personalization:</strong> To customize your experience based on language preferences and usage patterns.</li>
+                                <li><strong>Communication:</strong> To send service updates, security alerts, and promotional content (with your consent).</li>
+                                <li><strong>Security:</strong> To detect, prevent, and address technical issues and fraudulent activity.</li>
+                                <li><strong>Legal Compliance:</strong> To comply with applicable laws and regulations.</li>
+                            </ul>
+                        </section>
+
+                        <section id="data-sharing">
+                            <h3>4. Data Sharing & Disclosure</h3>
+                            <p>We do not sell your personal information. We may share your data in the following circumstances:</p>
+                            <ul>
+                                <li><strong>Service Providers:</strong> Trusted third parties who assist in operating our services (cloud hosting, analytics, customer support).</li>
+                                <li><strong>Legal Requirements:</strong> When required by law, court order, or governmental authority.</li>
+                                <li><strong>Business Transfers:</strong> In connection with a merger, acquisition, or sale of assets.</li>
+                                <li><strong>With Your Consent:</strong> When you explicitly authorize us to share your information.</li>
+                                <li><strong>Aggregated Data:</strong> Non-identifiable, aggregated statistics may be shared for research and marketing purposes.</li>
+                            </ul>
+                        </section>
+
+                        <section id="data-security">
+                            <h3>5. Data Security</h3>
+                            <p>We implement robust security measures to protect your information:</p>
+                            <ul>
+                                <li><strong>Encryption:</strong> All data is encrypted in transit (TLS 1.3) and at rest (AES-256).</li>
+                                <li><strong>Access Controls:</strong> Strict employee access policies with role-based permissions.</li>
+                                <li><strong>Regular Audits:</strong> Third-party security assessments and penetration testing.</li>
+                                <li><strong>Secure Infrastructure:</strong> Data centers with SOC 2 Type II certification.</li>
+                            </ul>
+                            <p>
+                                While we strive to protect your data, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security but are committed to maintaining industry-standard protections.
+                            </p>
+                        </section>
+
+                        <section id="data-retention">
+                            <h3>6. Data Retention</h3>
+                            <p>We retain your information only for as long as necessary:</p>
+                            <ul>
+                                <li><strong>Account Data:</strong> Retained while your account is active and for 30 days after deletion request.</li>
+                                <li><strong>Translation Data:</strong> Processed in real-time and not stored unless saved to your Favorites.</li>
+                                <li><strong>Usage Analytics:</strong> Retained in anonymized form for up to 24 months.</li>
+                                <li><strong>Legal Records:</strong> Retained as required by applicable laws.</li>
+                            </ul>
+                        </section>
+
+                        <section id="your-rights">
+                            <h3>7. Your Rights</h3>
+                            <p>Depending on your location, you may have the following rights:</p>
+                            <ul>
+                                <li><strong>Access:</strong> Request a copy of your personal data.</li>
+                                <li><strong>Correction:</strong> Request correction of inaccurate data.</li>
+                                <li><strong>Deletion:</strong> Request deletion of your personal data.</li>
+                                <li><strong>Portability:</strong> Receive your data in a machine-readable format.</li>
+                                <li><strong>Objection:</strong> Object to processing for direct marketing purposes.</li>
+                                <li><strong>Restriction:</strong> Request limitation of processing in certain circumstances.</li>
+                                <li><strong>Withdraw Consent:</strong> Withdraw consent at any time where processing is based on consent.</li>
+                            </ul>
+                            <p>To exercise these rights, please contact us at <a href="mailto:privacy@africantongues.app" class="text-[#c67240] hover:underline">privacy@africantongues.app</a>.</p>
+                        </section>
+
+                        <section id="children">
+                            <h3>8. Children's Privacy</h3>
+                            <p>
+                                Our Services are not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you are a parent or guardian and believe your child has provided us with personal data, please contact us immediately.
+                            </p>
+                        </section>
+
+                        <section id="international">
+                            <h3>9. International Data Transfers</h3>
+                            <p>
+                                Your information may be transferred to and processed in countries other than your country of residence. These countries may have different data protection laws. We ensure appropriate safeguards are in place, including Standard Contractual Clauses approved by relevant authorities.
+                            </p>
+                        </section>
+
+                        <section id="changes">
+                            <h3>10. Changes to This Policy</h3>
+                            <p>
+                                We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new policy on this page and updating the "Last updated" date. For significant changes, we will provide a more prominent notice (such as an in-app notification or email).
+                            </p>
+                        </section>
+
+                        <section id="contact">
+                            <h3>11. Contact Us</h3>
+                            <p>If you have any questions about this Privacy Policy, please contact us:</p>
+                            <div class="bg-orange-50 p-6 rounded-2xl mt-4">
+                                <p class="mb-2"><strong>Email:</strong> <a href="mailto:privacy@africantongues.app" class="text-[#c67240]">privacy@africantongues.app</a></p>
+                                <p class="mb-2"><strong>Address:</strong> 45 Victoria Island, Lagos, Nigeria</p>
+                                <p><strong>Data Protection Officer:</strong> <a href="mailto:dpo@africantongues.app" class="text-[#c67240]">dpo@africantongues.app</a></p>
+                            </div>
+                        </section>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a1a1a] text-white pt-20 pb-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-12 mb-16">
+                <div class="col-span-2">
+                    <div class="flex items-center gap-3 mb-6">
+                         <div class="w-14 h-14 flex items-center justify-center">
+    <img 
+        src="assets/African Mother Tongues logo (1).png" 
+        alt="African Tongues Logo"
+        class="w-22 h-22 object-contain filter contrast-125 brightness-110 drop-shadow-sm"
+    />
+</div>
+                        <span class="text-2xl font-extrabold tracking-tight">Mother <span class="text-[#c67240]">Tongue</span></span>
+                    </div>
+                    <p class="text-gray-400 max-w-sm mb-8">
+                        The definitive bridge between cultures. Bridging the gap through technology while preserving the richness of African heritage.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[#c67240] transition-colors"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Quick Links</h5>
+                    <ul class="space-y-4 text-gray-400">
+                         <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+                        <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-lg font-bold mb-6">Support</h5>
+                    <ul class="space-y-4 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Help Center</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Contact Support</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Community Forum</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Feedback</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Mother Tongue. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Scroll Reveal
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll for TOC links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
